@@ -34,7 +34,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               height: 30,
             ),
             // spread the List
-            ...currentQuestion.answers.map((answer) {
+            ...currentQuestion.getShuffledAnswers().map((answer) {
+              // map doesn't mutate the original list
               return AnswerButton(
                 answerText: answer,
                 onPress: () {},
