@@ -11,8 +11,8 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget activeScreen =
-      const StartScreen(); // storing the widget in a variable of type widget
+  Widget activeScreen = const StartScreen(
+      switchScreen); // storing the widget in a variable of type widget
 
   void switchScreen() {
     setState(() {
