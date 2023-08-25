@@ -79,3 +79,7 @@ final myList = [
 - < to check for the value on the left to be smaller than the value on the right (randomNumber < 5 yields true if randomNumber is smaller than 5)
 
 - <= to check for the value on the left to be smaller than or equal to the value on the right (randomNumber <= 5 yields true if randomNumber is smaller than 5 or equals 5)
+
+### Fonts & Styling
+
+[Adding custom fonts](https://pub.dev/packages/google_fonts "A Flutter package to use fonts from fonts.google.com")
