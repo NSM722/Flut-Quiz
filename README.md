@@ -38,3 +38,44 @@ There are three extremely important (stateful) widget lifecycle methods:
 - initState(): Executed by Flutter when the StatefulWidget's State object is initialized
 - build(): Executed by Flutter when the Widget is built for the first time AND after setState() was called
 - dispose(): Executed by Flutter right before the Widget will be deleted (e.g., because it was displayed conditionally)
+
+### Using "if" Statements In Lists
+
+[Read more on control flow collections](https://github.com/dart-lang/language/blob/main/accepted/2.3/control-flow-collections/feature-specification.md "repo-link")
+
+```dart
+final myList = [
+  1,
+  2,
+    if (condition) // Note: no curly braces
+      3
+    else
+      4
+];
+```
+
+In this example, the number 3 will only be added to myList if condition was met (condition can be true or false or a check that yields true or false - e.g., day == 'Sunday')
+
+Another alternative is a **ternary expression**
+
+```dart
+final myList = [
+  1,
+  2,
+  condition ? 3 : 4
+];
+```
+
+### Comparison Operators
+
+- == operator checks for value equality
+
+- != to check for inequality (randomNumber != 5 expects randomNumber to NOT be 5, i.e., to be any other value)
+
+- > to check for the value on the left to be greater than the value on the right (randomNumber > 5 yields true if randomNumber is greater than 5)
+
+- >= to check for the value on the left to be greater than or equal to the value on the right (randomNumber >= 5 yields true if randomNumber is greater than 5 or equals 5)
+
+- < to check for the value on the left to be smaller than the value on the right (randomNumber < 5 yields true if randomNumber is smaller than 5)
+
+- <= to check for the value on the left to be smaller than or equal to the value on the right (randomNumber <= 5 yields true if randomNumber is smaller than 5 or equals 5)
