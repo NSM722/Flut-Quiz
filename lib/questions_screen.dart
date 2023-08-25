@@ -1,6 +1,5 @@
 import 'package:adv_quiz_app/data/questions.dart';
 import 'package:flutter/material.dart';
-import 'package:adv_quiz_app/models/quiz_question.dart';
 import 'package:adv_quiz_app/answer_button.dart';
 
 class QuestionsScreen extends StatefulWidget {
@@ -30,22 +29,13 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           const SizedBox(
             height: 30,
           ),
-          AnswerButton(
-            answerText: currentQuestion.answers[0],
-            onPress: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[1],
-            onPress: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[2],
-            onPress: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[3],
-            onPress: () {},
-          ),
+          // spread the List
+          ...currentQuestion.answers.map((answer) {
+            return AnswerButton(
+              answerText: answer,
+              onPress: () {},
+            );
+          }),
         ],
       ),
     );

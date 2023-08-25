@@ -72,9 +72,9 @@ final myList = [
 
 - != to check for inequality (randomNumber != 5 expects randomNumber to NOT be 5, i.e., to be any other value)
 
-- > to check for the value on the left to be greater than the value on the right (randomNumber > 5 yields true if randomNumber is greater than 5)
+- **>** to check for the value on the left to be greater than the value on the right (randomNumber > 5 yields true if randomNumber is greater than 5)
 
-- >= to check for the value on the left to be greater than or equal to the value on the right (randomNumber >= 5 yields true if randomNumber is greater than 5 or equals 5)
+- **>=** to check for the value on the left to be greater than or equal to the value on the right (randomNumber >= 5 yields true if randomNumber is greater than 5 or equals 5)
 
 - < to check for the value on the left to be smaller than the value on the right (randomNumber < 5 yields true if randomNumber is smaller than 5)
 
