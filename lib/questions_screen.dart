@@ -4,7 +4,10 @@ import 'package:adv_quiz_app/answer_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onSelectAnswer});
+
+  final void Function(String answer) onSelectAnswer;
+
   @override
   State<QuestionsScreen> createState() {
     return _QuestionsScreenState(); // return the state instant
@@ -14,7 +17,9 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(
+        selectedAnswer); // the method widget ensures that this state class has action to the named parameter from the parent
     setState(() {
       currentQuestionIndex++; // or currentQuestionIndex += 1
     });
@@ -36,7 +41,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               textAlign: TextAlign.center,
               currentQuestion.text,
               style: GoogleFonts.alegreya(
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 255, 255, 255),
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
               ),
@@ -49,7 +54,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               // map doesn't mutate the original list
               return AnswerButton(
                 answerText: answer,
-                onPress: answerQuestion,
+                onPress: () {
+                  answerQuestion(answer);
+                },
               );
             }),
           ],
