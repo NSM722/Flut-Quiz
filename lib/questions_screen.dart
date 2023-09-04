@@ -50,7 +50,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               height: 30,
             ),
             // spread the List
-            ...currentQuestion.getShuffledAnswers().map((answer) {
+            ...currentQuestion.shuffledAnswers.map((answer) {
               // map doesn't mutate the original list
               return AnswerButton(
                 answerText: answer,

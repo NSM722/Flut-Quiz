@@ -12,6 +12,8 @@ class Quiz extends StatefulWidget {
   }
 }
 
+// the underscore here means this QuizState class
+// is private and only belongs in this file & class for usage
 class _QuizState extends State<Quiz> {
   List<String> selectedAnswers = []; // store selected answers
   var activeScreen = 'start-screen';
