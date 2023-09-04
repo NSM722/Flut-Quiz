@@ -8,7 +8,7 @@ class StartScreen extends StatelessWidget {
   final void Function() startQuiz;
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisSize:
