@@ -13,16 +13,18 @@ class ResultsScreen extends StatelessWidget {
   final List<String> chosenAnswers;
   final void Function() onRestart;
 
-  List<Map<String, Object>> getSummaryData() {
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < chosenAnswers.length; i++) {
-      summary.add({
-        'question_index': i,
-        'question': questions[i].text,
-        'correct_answer': questions[i].answers[0],
-        'user_answer': chosenAnswers[i],
-      });
+      summary.add(
+        {
+          'question_index': i,
+          'question': questions[i].text,
+          'correct_answer': questions[i].answers[0],
+          'user_answer': chosenAnswers[i],
+        },
+      );
     }
 
     return summary;
@@ -30,7 +32,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryData();
     final numTotalQuestions = questions.length;
     final numCorrectQuestions = summaryData.where((data) {
       return data['user_answer'] == data['correct_answer'];
